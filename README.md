@@ -1,142 +1,141 @@
-# 🤖 DIO Agent
+# 🔐 DIO Agent — Especialização em Cibersegurança
 
-> Seu mentor com Inteligência Artificial para aprender mais e melhor na [DIO](https://dio.me).
-
-O **DIO Agent** é um agente de IA que acompanha você na sua jornada de estudos. Ele conhece as experiências da DIO (Bootcamps, Formações, Cursos, Desafios e muito mais) e ajuda você a estudar, praticar e planejar a sua carreira.
-
-Você não precisa saber programar nem instalar nada complicado. Em **3 passos**, o seu mentor está pronto para usar.
+> Especialização do [DIO Agent](https://github.com/digitalinnovationone/dio-agent) com foco em segurança de aplicações (AppSec), desenvolvida para o Bootcamp Santander Cibersegurança da [DIO](https://dio.me).
 
 ---
 
-## ✨ Três palavras para começar
+## 📌 Sobre a especialização
 
-- 🧠 **Agente de IA:** um chatbot responde perguntas. Um *agente* vai além: lê, planeja e executa passos para ajudar você a alcançar um objetivo. É a diferença entre alguém que explica o caminho e alguém que caminha junto com você.
-- 🖥️ **Harness:** é o programa onde o agente roda. O agente é o mentor, e o harness é a sala onde vocês se encontram. O mesmo mentor atende em salas diferentes, por isso o DIO Agent funciona em vários harnesses.
-- 🧩 **Skill:** é uma habilidade do agente, descrita em um guia passo a passo. Você não precisa chamar a skill: o agente percebe o que você precisa e usa a certa sozinho.
+Esta versão do DIO Agent foi estendida para atuar como um **mentor de segurança de aplicações**, conduzindo análises de vulnerabilidades da forma que um profissional de AppSec faria:
 
-Esses e outros termos estão no [Glossário](docs/glossary.md).
-
----
-
-## 🚀 Comece em 3 passos
-
-### 1️⃣ Instale um harness
-
-Recomendamos o **Google Antigravity**, que tem limites de uso generosos para quem está começando. Mas qualquer harness da lista funciona: escolha um e siga a instalação da documentação oficial dele.
-
-| Harness | Documentação oficial |
-|---------|----------------------|
-| Google Antigravity (recomendado) | https://antigravity.google/docs |
-| Claude Code | https://code.claude.com/docs |
-| Codex | https://developers.openai.com/codex |
-| OpenCode | https://opencode.ai/docs |
-| Hermes | https://hermes-agent.nousresearch.com/docs |
-
-### 2️⃣ Baixe o DIO Agent e abra no harness
-
-Baixe este repositório do jeito mais simples para você:
-
-- **Com Git:** no terminal, rode `git clone https://github.com/digitalinnovationone/dio-agent.git`
-- **Sem Git:** no topo desta página, clique no botão verde **Code**, depois em **Download ZIP**, e extraia a pasta.
-
-Depois, abra no harness a pasta do projeto, a que tem o arquivo `AGENTS.md` (pelo Git, ela se chama `dio-agent`; pelo .zip, `dio-agent-main`). O harness lê esse arquivo sozinho, e o agente já sabe quem é: o seu mentor de estudos da DIO.
-
-### 3️⃣ Converse
-
-Fale naturalmente, com as suas palavras. Nas primeiras vezes, vale usar um dos [modelos de prompt](#-modelos-de-prompt) abaixo: quanto mais contexto você dá, melhor o agente ajuda.
+- Pergunta o contexto antes de agir
+- Avalia impacto, probabilidade e severidade de cada falha
+- Orienta a correção sem entregar o código pronto
+- Referencia MITRE ATT&CK e OWASP quando aplicável
+- Nunca fornece exploits prontos para uso fora de laboratório
 
 ---
 
-## 🧩 As skills do agente
+## 📁 Arquivos criados ou alterados
 
-| Skill | Para que serve | Experimente pedir |
-|-------|----------------|-------------------|
-| [Plano de estudos](skills/study-plan/SKILL.md) | Organiza o que estudar, em que ordem e em quanto tempo | "Quero concluir este Bootcamp em 2 meses, me ajuda?" |
-| [Destravar desafio](skills/unblock-challenge/SKILL.md) | Conduz você até a solução de um desafio, sem dar a resposta pronta | "Travei nesse desafio, me ajuda?" |
-| [Explicar conceito](skills/explain-concept/SKILL.md) | Explica conceitos de forma simples, com analogias e exemplos | "Não entendi o que é uma API." |
-| [Pesquisa na web](skills/web-search/SKILL.md) | Responde dúvidas atuais (versões, lançamentos, mercado) com fontes citadas | "Qual a versão estável do Node hoje?" |
-| [Revisão de portfólio](skills/portfolio-review/SKILL.md) | Dá feedback sobre o seu portfólio e GitHub antes de buscar vagas | "O que falta no meu GitHub para uma vaga júnior?" |
-| [Caminho AI Builder](skills/ai-builder-path/SKILL.md) | Ajuda você a escolher o próximo passo na Carreira AI Builder | "Qual Formação AI Builder combina comigo?" |
-
-A pesquisa na web usa a busca do seu harness. Se ele não tiver busca própria, veja [como conectar o You.com](docs/youcom-mcp.md), que tem uma opção gratuita.
+| Arquivo | O que foi feito |
+|---|---|
+| `skills/vulnerability-analysis/SKILL.md` | Skill nova — roteiro de análise de vulnerabilidades |
+| `skills/vulnerability-analysis/README.md` | Documentação da skill para pessoas |
+| `agent/knowledge/security-basics.md` | Base de conhecimento: vulnerabilidade, ameaça, risco, tríade CIA, OWASP Top 10 |
+| `agent/persona.md` | Adicionado trecho de especialização em segurança |
+| `AGENTS.md` | Adicionada linha da skill na tabela de skills |
+| `app.py` | Código vulnerável (SQL Injection) para testar a skill |
 
 ---
 
-## 📝 Modelos de prompt
+## 🧰 Estrutura do projeto
 
-Copie, preencha o que está entre colchetes e envie. Não precisa de formato perfeito: o agente pede mais detalhes se precisar.
-
-**🗺️ Plano de estudos**
-
-```
-Quero montar um plano de estudos.
-- Meu objetivo: [ex: ser dev back-end, concluir um Bootcamp]
-- O que quero fazer na DIO: [link ou nome do Bootcamp, Formação, Aceleração ou Carreira]
-- O que já tenho: [um plano de ação ou de estudos, se tiver]
-- Meu nível hoje: [iniciante, intermediário, avançado]
-- Tempo disponível: [ex: 1 hora por dia, de segunda a sexta]
-```
-
-**🔓 Destravar desafio**
-
-```
-Estou travado em um Desafio de [Código, Projeto ou Criativo] da DIO.
-- O que o desafio pede: [cole o enunciado ou, no Desafio de Projeto, o link do repositório do desafio]
-- Onde eu travei: [explique o ponto da dificuldade]
-- Meu código ou repositório: [cole o código ou o link, se tiver]
-Me ajuda a destravar sem dar a resposta pronta.
-```
-
-**💡 Explicar conceito**
-
-```
-Me explica o conceito de [ex: API, laço de repetição, herança].
-- Meu nível: [nunca vi, já ouvi falar, quero aprofundar]
-```
-
-**🧭 Caminho AI Builder**
-
-```
-Quero escolher meu próximo passo na Carreira AI Builder.
-- O que quero construir com IA: [ex: um produto para o meu negócio, um software, agentes que automatizam processos, ainda não sei]
-- Minha experiência com programação: [nenhuma, o básico, trabalho com desenvolvimento]
-- Meu objetivo: [ex: mudar de carreira, tirar uma ideia do papel]
-```
-
----
-
-## 🔄 Mantenha o DIO Agent atualizado
-
-O DIO Agent evolui com o tempo. Se você usou Git, rode `git pull` no terminal, dentro da pasta (ou peça para o próprio agente rodar). Se baixou o .zip, baixe de novo.
-
----
-
-## 🗂️ Estrutura do repositório
-
-```
 dio-agent/
-├── README.md                Este guia
-├── AGENTS.md                Definição do agente (lida pelo harness)
-├── CLAUDE.md                Atalho para o Claude Code
 ├── agent/
-│   ├── persona.md           A personalidade e o tom do agente
-│   └── knowledge/           O que o agente sabe sobre a DIO
-├── skills/                  Uma pasta por skill, cada uma com o seu SKILL.md
-└── docs/
-    ├── glossary.md          Glossário de termos
-    └── youcom-mcp.md        Como conectar a busca do You.com
+│ ├── knowledge/
+│ │ ├── dio-platform.md
+│ │ ├── learning-experiences.md
+│ │ └── security-basics.md ← novo
+│ └── persona.md ← atualizado
+├── skills/
+│ ├── vulnerability-analysis/ ← novo
+│ │ ├── SKILL.md
+│ │ └── README.md
+│ └── (skills originais)
+├── app.py ← novo (código de teste)
+├── AGENTS.md ← atualizado
+└── README.md
+
+
+---
+
+## 🚀 Como rodar o agente
+
+### 1. Instale o Hermes
+
+Siga a documentação oficial indicada no README do repositório base:
+```bash
+npm install -g @anthropic-ai/hermes
 ```
 
+### 2. Clone este repositório
+
+```bash
+git clone https://github.com/SEU-USUARIO/dio-agent-ciberseguranca
+cd dio-agent-ciberseguranca
+```
+
+### 3. Rode o Hermes na pasta do projeto
+
+```bash
+hermes
+```
+
+> ⚠️ O Hermes precisa ser rodado na pasta raiz do projeto para encontrar os arquivos do agente.
+
 ---
 
-## 🤝 Contribua
+## 🧪 Testando a skill de segurança
 
-Tem uma ideia de skill? Veja [como criar uma skill](skills/README.md) e abra um pull request.
+O arquivo `app.py` contém um sistema de login vulnerável a SQL Injection para fins educacionais.
+
+### Rodando o teste
+
+```bash
+python app.py
+```
+
+### Resultado esperado
+
+=== Teste normal ===
+Query executada: SELECT * FROM users WHERE username='admin' AND password='senha123'
+Login admin/senha123: True
+
+=== Teste com SQL Injection ===
+Query executada: SELECT * FROM users WHERE username='admin' --‘ AND password='qualquer'
+Login com payload: True
+
+
+O payload `admin' --` comenta o resto da query SQL, ignorando completamente a verificação de senha — isso demonstra na prática como o SQL Injection funciona.
 
 ---
 
-## 💬 Sobre este projeto
+## 💬 Conversa com o agente
 
-O DIO Agent foi criado para acompanhar você nos Bootcamps e Formações da DIO. A ideia é simples: aprender na era da IA fica mais fácil quando você tem um mentor disponível a qualquer hora.
+Para testar a skill, descreva um cenário ao agente:
 
-Bons estudos, e vem com a gente. 🚀
+> "Tenho um código Python de login que monta a query SQL concatenando o input do usuário. Pode analisar como especialista em AppSec?"
+
+O agente vai:
+1. Perguntar o contexto antes de agir (ambiente, acesso, dono do código)
+2. Identificar a vulnerabilidade (SQL Injection)
+3. Avaliar impacto, probabilidade e severidade
+4. Referenciar MITRE ATT&CK T1190
+5. Orientar a correção sem entregar o código pronto
+
+---
+
+## 🛡️ Melhoria escolhida
+
+A melhoria implementada foi a **skill de análise de vulnerabilidades**, que transforma o DIO Agent num mentor de AppSec capaz de:
+
+- Conduzir análises estruturadas com avaliação de risco (Impacto / Probabilidade / Severidade)
+- Usar o framework MITRE ATT&CK como referência técnica
+- Aplicar os princípios do OWASP Top 10
+- Cobrir a tríade CIA (Confidencialidade, Integridade, Disponibilidade) na análise
+
+---
+
+## 📚 Referências
+
+- [DIO Agent — Repositório base](https://github.com/digitalinnovationone/dio-agent)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [MITRE ATT&CK](https://attack.mitre.org/)
+- Bootcamp Santander Cibersegurança | [DIO](https://dio.me)
+
+---
+
+## ⚠️ Aviso
+
+O arquivo `app.py` contém código **intencionalmente vulnerável** para fins educacionais. Não use em produção. Todos os testes foram realizados em ambiente local isolado.
